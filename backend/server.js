@@ -7,11 +7,11 @@ import blogRouter from './routes/blog.route.js';
 
 
 dotenv.config();
-const port = process.env.PORT || 5000;
 const app = express();
+const port = process.env.PORT || 5000;
 
 //middlewares
-app.use(express.json())
+app.use(express.json());
 
 // router-level middlewares
 app.get('/', (req, res)=>{
