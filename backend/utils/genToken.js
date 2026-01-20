@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+//To generate jwt token
 
 const genToken=async(userId)=>{
     try {
