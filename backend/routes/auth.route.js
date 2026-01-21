@@ -4,6 +4,6 @@ const authRouter = express.Router();
 
 authRouter.get('/get',getAllUser);
 authRouter.post('/signup',signUp);
-authRouter.post('signin', signIn);
+authRouter.post('/signin', signIn);
 
 export default authRouter;

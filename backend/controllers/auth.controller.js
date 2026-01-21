@@ -41,7 +41,7 @@ export const signIn = async(req, res)=>{
         if(!isMatch){
             return res.status(400).json({message:"Incorrect Password !"});
         }
-        const jwtToken = genToken(user._id);
+        const jwtToken = await genToken(user._id); //genToken is an async function returns the promise
 
         return res.status(200).json({
             message:"Login sucessfully !",
