@@ -52,6 +52,3 @@ export const signIn = async(req, res)=>{
     }
 }
 
-export const getAllUser = async(req, res)=>{
-    res.json({message:"get all user"});
-}

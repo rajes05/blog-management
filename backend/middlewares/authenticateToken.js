@@ -11,7 +11,7 @@ const authenticateToken = async(req, res, next)=>{
         if(!decoded){
             return res.status(401).json({message:"Invalid or Expired token !"});
         }
-        req.user=decoded;
+        req.user=decoded; //attached decoded payload to req.user
         next(); //proceed to next middleware or route handler
     } catch (error) {
         return res.status(500).json({message:`Authenticate error: ${error}`});
