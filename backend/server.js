@@ -5,6 +5,7 @@ import cors from 'cors';
 import { connectDB } from './config/db.js';
 import authRouter from './routes/auth.route.js';
 import blogRouter from './routes/blog.route.js';
+import errorHandler from './middlewares/errorHandler.js';
 
 
 dotenv.config();
@@ -21,6 +22,9 @@ app.get('/', (req, res)=>{
 
 app.use('/api/auth',authRouter);
 app.use('/api/blog',blogRouter)
+
+//error-handling middleware
+app.use(errorHandler);
 
 
 //start server

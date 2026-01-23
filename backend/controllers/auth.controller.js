@@ -1,9 +1,10 @@
 import User from "../models/user.model.js";
 import bcrypt from 'bcrypt';
 import genToken from "../utils/genToken.js";
+import {asyncHandler } from "../utils/asyncHandler.js";
 
-export const signUp = async(req, res)=>{
-    try {
+export const signUp = asyncHandler(async(req, res)=>{
+    
         const {fullName, email, password} = req.body;
         if(!fullName ||!email ||!password){
             return res.status(400).json({message:"All fields are required !"});
@@ -22,13 +23,10 @@ export const signUp = async(req, res)=>{
 
         return res.status(201).json({message:"SignUp sucessfully !",user})
 
-    } catch (error) {
-        return res.status(500).json({message:`Create account error${error}`});
-    }
-}
+})
 
-export const signIn = async(req, res)=>{
-    try {
+export const signIn = asyncHandler(async(req, res)=>{
+    
         const {email, password} = req.body;
         if(!email || !password){
             return res.status(400).json({message:"All fields are required !"});
@@ -47,8 +45,6 @@ export const signIn = async(req, res)=>{
             message:"Login sucessfully !",
             jwtToken
         })
-    } catch (error) {
-        return res.status(500).json({message:`Login error ${error}`});
-    }
-}
+   
+})
 
