@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
-import authRouter from './routes/auth.route.js';
+import authRouter from './routes/auth/auth.route.js';
 import errorHandler from './middlewares/errorHandler.js';
 import blogRouter from './routes/blog/blog.route.js';
 

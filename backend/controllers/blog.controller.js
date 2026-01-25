@@ -45,7 +45,7 @@ export const getAllBlogs = asyncHandler(async(req, res)=>{
 export const getAutherBlogs = asyncHandler(async(req, res)=>{
     
         const autherId = req.user.userId; // from authenticated user (authentication middleware)
-        const autherBlogs = await Blog.findOne({auther:autherId})
+        const autherBlogs = await Blog.find({auther:autherId})
         //to get data related
         .populate('auther','fullName email')
         .sort({createdAt:-1})
